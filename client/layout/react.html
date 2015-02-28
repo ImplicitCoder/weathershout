@@ -1,0 +1,68 @@
+<head>
+  <title>World Wide Weather</title>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>World Wide Weather </h1>
+        <cite class="text-right"><h2>- By Baze -</h2></cite>
+      </div>
+    </div>
+
+  <div class="container-fluid">
+
+    <div class="col-sm-12">
+      <h2>Where on Earth is the Weather?</h2>
+      <form class="LocationInput">
+        <input type = "text" name="location" placeholder="City, Country">
+        <input type = "submit" value = "Get Weather">
+      </form>
+      <div class="weatherbox">
+        <h3> {{> weather}}</h3>
+      </div>
+    </div>
+
+    <div class="col-sm-8" >
+      {{> plan}}
+    </div>
+
+    <div class="col-sm-4">
+      <div class="shoutbox">
+        <h1 class="title">Shoutbox!</h1>
+        <div id="shoutContent" class="content">
+          {{> shoutbox}}
+         </div>
+        <form class="new-shout">
+          <input type="text" name="name" placeholder="Your name" style="width: 8em"/>
+          <input type="text" name="text" placeholder="Your message ..." />
+          <input type="submit" value="Shout!">
+        </form>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+<template name="weather">
+  <p>
+  {{#if locatie}}
+    The weather in {{locatie}} is: 
+  {{/if}}
+  {{forecast}}
+  </p>
+</template>
+
+<template name="plan">
+  <div id="map"></div>
+</template>
+
+<template name="shoutbox">
+{{#each shout}}
+  <li><span class="name">{{name}}</span> says: {{text}}<div class="submitted">{{createdAt}}</div></li>
+  <hr class="divider"/>
+  {{scrollDown}}
+{{/each}}
+</template>
+

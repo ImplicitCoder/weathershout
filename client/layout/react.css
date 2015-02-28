@@ -1,0 +1,58 @@
+/* CSS declarations go here */
+body {
+  font-family: sans-serif;
+  background-color: #315481;
+  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.weatherbox{
+  margin-top: 2em;
+  color: darkgrey;
+}
+div#map{
+  position: relative;
+  width: 40em;
+  height: 30em;
+}
+.shoutbox .title {
+  text-align: center;
+}
+.shoutbox .content {
+  list-style-type: none;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 30em;
+  border: solid;
+  padding: 1em;
+  margin: 0.5em;
+  width: 25em;
+  float: center;
+  clear: both;
+  }
+.submitted{
+  text-align: right;
+  font-size: 0.85em;
+  color: darkgray;
+}
+.name{
+  color: darkgreen;
+}
+.map{
+  margin-top: 10em;
+}
+.new-shout{
+  padding: 1em;
+  margin-bottom: 2em;
+}
+.shoutContent{
+  width: 25em;
+}
+.LocationInput{
+  margin: 2em;
+}
