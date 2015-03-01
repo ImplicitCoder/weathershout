@@ -11,7 +11,7 @@ Tracker.autorun(function(){
   if(Mapbox.loaded()){
             L.mapbox.accessToken = "pk.eyJ1IjoiZGViYXplIiwiYSI6IldZTkJKRm8ifQ.yIrb5BtdpEKHBbhRz9sbPg";
             map = L.mapbox.map('map', "debaze.lb0ec7ma", {zoomControl: false}).setView([0.0252, 20], 1);
-            map.touchZoom.disable();
+            map.dragging.disable();
             map.doubleClickZoom.disable();
             marker = L.marker([-1000,-1000], {  // Put marker out of sight
                icon: L.mapbox.marker.icon({'marker-color': '#f86767' })
@@ -78,6 +78,8 @@ Template.body.events({
       var name = event.target.name.value;
       Meteor.call("addShout", text, name);
       event.target.text.value="";  // reset shout input field to empty - placeholder
+      var content = document.getElementById('shoutContent');
+      content.scrollTop = content.scrollHeight;
       return false;
       }
 });
