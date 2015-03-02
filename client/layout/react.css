@@ -56,3 +56,7 @@ div#map{
 .LocationInput{
   margin: 2em;
 }
+.modal-content{
+  list-style-type: none;
+  padding: 2em;
+}
