@@ -39,9 +39,18 @@ Template.weather.helpers({
 
 Template.shoutbox.helpers({
   shout: function(){
-    var shoutCursor =  Shouts.find({}, {sort: {createdAt: 1}})
-    return shoutCursor;
-    },
+    var shoutCursor =  Shouts.find({}, {sort: {createdAt: 1}});
+    shoutObj=[]
+    var _i = 0
+     shoutCursor.forEach(function(shout){
+        createdWhen = moment(shout.createdAt).fromNow();
+        shoutObj[_i]={name:shout.name, text:shout.text, createdAt:createdWhen}
+        _i++;
+
+    });
+    return shoutObj;
+  }, 
+
     scrollDown: function(){     //Scrolldown to last shout
     Meteor.defer(function (){   //Wait until DOM is populated
       var content = document.getElementById('shoutContent');
