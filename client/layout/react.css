@@ -58,5 +58,8 @@ div#map{
 }
 .modal-content{
   list-style-type: none;
-  padding: 2em;
+  padding:0 2em 2em 2em;
+  line-height: 2em;
+}
+.modal-header{
 }

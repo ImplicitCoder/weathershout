@@ -57,17 +57,20 @@
     The weather in {{locatie}} is: 
   {{/if}}
   {{forecast}}
-  </p>
- 
   {{#if locatie}}
- <button type = "submit" name="get_forecast" class="btn"
-                  data-toggle="modal" data-target=".bs-example-modal-sm" value="3-day forecast">
+ <button name="get_forecast" 
+                  data-toggle="modal" data-target="#weatherModal" value="3-day forecast">
 Get forecast</button>
   {{/if}}
-
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+</p>
+<div class="modal fade" id="weatherModal">
+  <div class="modal-dialog">
     <div class="modal-content">
+ <div class="modal-header">
+ <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+      <h2>Forecast for {{locatie}}</h2>
+       </div>
 {{>detailedForecastModal}}
     </div>
   </div>
@@ -87,7 +90,7 @@ Get forecast</button>
 </template>
 
 <template name="detailedForecastModal">
-<h2>Detailed weather forecast for location </h2>
+
 {{#each detforecast}}
   <li>{{content}}</li>
 {{/each}}

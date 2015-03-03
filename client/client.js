@@ -29,8 +29,10 @@ updateMarker= function(){
 Template.detailedForecastModal.helpers({
           detforecast : function(){
             return Session.get("detForecast");
+          },
+          location : function(){
+            return Session.get("locatie");
           }
-
 });
 Template.weather.helpers({
         forecast : function() {
@@ -51,10 +53,9 @@ Template.shoutbox.helpers({
         createdWhen = moment(shout.createdAt).fromNow();
         shoutObj[_i]={name:shout.name, text:shout.text, createdAt:createdWhen}
         _i++;
-
     });
     return shoutObj;
-  },
+    },
 
     scrollDown: function(){     //Scrolldown to last shout
     Meteor.defer(function (){   //Wait until DOM is populated
@@ -103,10 +104,13 @@ Template.weather.events({ //Get weather forecast after location is set and displ
       Session.set("detForecast", [{content:"loading..."}, {content:"loading..."}, {content:"loading..."}])
         Meteor.call('getDetailedForecast', _locatie, function(err, result){
           if (result !=="error"){
+            var today = new moment();
+            var afterTomorrow = moment().add(2,'days').format("dddd");
+            var twoAfterTomorrow = moment().add(3, 'days').format("dddd");
             var detailedArr = [];
-            detailedArr[0] = {"content" : result.desc1 + ", "+ Math.floor(result.temp1)+ "\xB0C"};
-            detailedArr[1] = {"content" : result.desc2 + ", "+ Math.floor(result.temp2)+ "\xB0C"};
-            detailedArr[2] = {"content" : result.desc3 + ", "+ Math.floor(result.temp3)+ "\xB0C"};
+            detailedArr[0] = {"content" : "Tomorrow: " + result.desc1 + ", "+ Math.floor(result.temp1)+ "\xB0C"};
+            detailedArr[1] = {"content" : afterTomorrow + ": " + result.desc2 +", "+ Math.floor(result.temp2)+ "\xB0C"};
+            detailedArr[2] = {"content" : twoAfterTomorrow + ": " + result.desc3  + ", "+ Math.floor(result.temp3)+ "\xB0C"};
             Session.set("detForecast", detailedArr);
           }else{
                Session.set("detForecast", false);
