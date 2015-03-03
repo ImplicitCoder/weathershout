@@ -11,6 +11,7 @@ body {
   left: 0;
   right: 0;
 }
+
 .weatherbox{
   margin-top: 2em;
   color: darkgrey;
@@ -22,6 +23,7 @@ div#map{
 }
 .shoutbox .title {
   text-align: center;
+  margin: 1em 0;
 }
 .shoutbox .content {
   list-style-type: none;
@@ -30,11 +32,11 @@ div#map{
   height: 30em;
   border: solid;
   padding: 1em;
-  margin: 0.5em;
+  margin: 0.5em auto;
   width: 25em;
   float: center;
   clear: both;
-  }
+   }
 .submitted{
   text-align: right;
   font-size: 0.85em;
@@ -48,7 +50,8 @@ div#map{
 }
 .new-shout{
   padding: 1em;
-  margin-bottom: 2em;
+  margin: 0 auto;
+  width: 30.5em;
 }
 .shoutContent{
   width: 25em;

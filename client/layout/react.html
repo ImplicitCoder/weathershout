@@ -14,8 +14,9 @@
 
   <div class="container-fluid">
 
-    <div class="col-sm-12">
-      <h2>Where on Earth is the Weather?</h2>
+
+    <div class="col-sm-6" >
+      <h1 class="title">Where on Earth is the Weather?</h1>
       <form class="LocationInput">
         <input type = "text" name="location" placeholder="City, Country">
         <input type = "submit" name="get_weather" value = "Get Weather">
@@ -28,13 +29,13 @@
 
 
       </div>
+        {{> plan}}
     </div>
 
-    <div class="col-sm-8" >
-      {{> plan}}
-    </div>
+    
+ 
 
-    <div class="col-sm-4">
+    <div class="col-sm-6">
       <div class="shoutbox">
         <h1 class="title">Shoutbox!</h1>
         <div id="shoutContent" class="content">
@@ -47,8 +48,7 @@
         </form>
       </div>
     </div>
-
-  </div>
+   </div>
 </body>
 
 <template name="weather">
