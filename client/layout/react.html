@@ -22,21 +22,15 @@
         <input type = "submit" name="get_weather" value = "Get Weather">
                  </form>
 
-   
       <div class="weatherbox">
         <h3> {{> weather}}</h3>
-
-
-
       </div>
         {{> plan}}
     </div>
 
-    
- 
 
     <div class="col-sm-6">
-      <div class="shoutbox">
+       <div class="shoutbox">
         <h1 class="title">Shoutbox!</h1>
         <div id="shoutContent" class="content">
           {{> shoutbox}}
@@ -58,7 +52,7 @@
   {{/if}}
   {{forecast}}
   {{#if locatie}}
- <button name="get_forecast" 
+ <button name="get_forecast" class="getForecast"
                   data-toggle="modal" data-target="#weatherModal" value="3-day forecast">
 Get forecast</button>
   {{/if}}

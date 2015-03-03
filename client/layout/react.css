@@ -66,3 +66,7 @@ div#map{
 }
 .modal-header{
 }
+.getForecast{
+  font-size: 0.7em;
+  color: black;
+}
