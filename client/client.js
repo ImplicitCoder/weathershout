@@ -54,7 +54,7 @@ Template.shoutbox.helpers({
 
     });
     return shoutObj;
-  }, 
+  },
 
     scrollDown: function(){     //Scrolldown to last shout
     Meteor.defer(function (){   //Wait until DOM is populated
@@ -85,7 +85,20 @@ Template.body.events({
         });
       return false;  //Avoid standard browser reload on form submit
       },
-      'click .detailedForecast': function(event){
+
+      'submit .new-shout' : function(event){
+      var text = event.target.text.value;
+      var name = event.target.name.value;
+      Meteor.call("addShout", text, name);
+      event.target.text.value="";  // reset shout input field to empty - placeholder
+      var content = document.getElementById('shoutContent');
+      content.scrollTop = content.scrollHeight;
+      return false;
+      }
+});
+
+Template.weather.events({ //Get weather forecast after location is set and display in modal"
+      'click button': function(event){
       var _locatie = Session.get("locatie");
       Session.set("detForecast", [{content:"loading..."}, {content:"loading..."}, {content:"loading..."}])
         Meteor.call('getDetailedForecast', _locatie, function(err, result){
@@ -97,21 +110,7 @@ Template.body.events({
             Session.set("detForecast", detailedArr);
           }else{
                Session.set("detForecast", false);
-
           }
-      
-      
         });
-
-      },
-
-      'submit .new-shout' : function(event){
-      var text = event.target.text.value;
-      var name = event.target.name.value;
-      Meteor.call("addShout", text, name);
-      event.target.text.value="";  // reset shout input field to empty - placeholder
-      var content = document.getElementById('shoutContent');
-      content.scrollTop = content.scrollHeight;
-      return false;
       }
 });

@@ -18,22 +18,14 @@
       <h2>Where on Earth is the Weather?</h2>
       <form class="LocationInput">
         <input type = "text" name="location" placeholder="City, Country">
-        <input type = "submit" value = "Get Weather">
-      </form>
+        <input type = "submit" name="get_weather" value = "Get Weather">
+                 </form>
+
+   
       <div class="weatherbox">
         <h3> {{> weather}}</h3>
 
-<button type="button" class="btn detailedForecast"  data-toggle="modal" data-target=".bs-example-modal-sm">3-day forecast</button>
 
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-
-{{>detailedForecastModal}}
-
-    </div>
-  </div>
-</div>
 
       </div>
     </div>
@@ -66,6 +58,20 @@
   {{/if}}
   {{forecast}}
   </p>
+ 
+  {{#if locatie}}
+ <button type = "submit" name="get_forecast" class="btn"
+                  data-toggle="modal" data-target=".bs-example-modal-sm" value="3-day forecast">
+Get forecast</button>
+  {{/if}}
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+{{>detailedForecastModal}}
+    </div>
+  </div>
+</div>
 </template>
 
 <template name="plan">
