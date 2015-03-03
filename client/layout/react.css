@@ -18,8 +18,9 @@ body {
 }
 div#map{
   position: relative;
-  width: 40em;
+  width: 90%;
   height: 30em;
+  margin: 0 auto;
 }
 .shoutbox .title {
   text-align: center;
@@ -29,11 +30,11 @@ div#map{
   list-style-type: none;
   overflow: scroll;
   overflow-x: hidden;
-  height: 30em;
+  height: 35em;
   border: solid;
   padding: 1em;
   margin: 0.5em auto;
-  width: 25em;
+  width: 70%;
   float: center;
   clear: both;
    }
@@ -51,11 +52,9 @@ div#map{
 .new-shout{
   padding: 1em;
   margin: 0 auto;
-  width: 30.5em;
+  width: 70%;
 }
-.shoutContent{
-  width: 25em;
-}
+
 .LocationInput{
   margin: 2em;
 }
@@ -69,4 +68,8 @@ div#map{
 .getForecast{
   font-size: 0.7em;
   color: black;
+  padding: 0.1em;
+}
+.button_text{
+  margin: 0.3em;
 }

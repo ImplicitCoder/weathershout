@@ -1,5 +1,5 @@
 <head>
-  <title>World Wide Weather test</title>
+  <title>WorldWeatherShout</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
@@ -37,7 +37,7 @@
          </div>
         <form class="new-shout">
           <input type="text" name="name" placeholder="Your name" style="width: 8em"/>
-          <input type="text" name="text" placeholder="Your message ..." />
+          <input type="text" name="text" placeholder="Your message ..." style="width:60%"/>
           <input type="submit" value="Shout!">
         </form>
       </div>
@@ -54,7 +54,7 @@
   {{#if locatie}}
  <button name="get_forecast" class="getForecast"
                   data-toggle="modal" data-target="#weatherModal" value="3-day forecast">
-Get forecast</button>
+<div class="button_text">Get forecast</div></button>
   {{/if}}
 </p>
 <div class="modal fade" id="weatherModal">
@@ -76,6 +76,8 @@ Get forecast</button>
 </template>
 
 <template name="shoutbox">
+{{#unless shout}}<li><strong>Loading shouts...</strong></li>{{/unless}}
+
 {{#each shout}}
   <li><span class="name">{{name}}</span> says: {{text}}<div class="submitted">{{createdAt}}</div></li>
   <hr class="divider"/>
