@@ -12,3 +12,5 @@ pauloborges:mapbox@2.1.4_3
 twbs:bootstrap
 momentjs:moment
 mrt:jquery-ui
+msavin:mongol
+sacha:spin
