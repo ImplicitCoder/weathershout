@@ -1,6 +1,6 @@
 Meteor.methods({
   getWeather : function(location){
-      // if-loop provided to prevent method without callback from running client-side (there's a stub)
+      // if-loop provided to prevent method without callback from running client-side (as a stub)
       // callback provided on client side while calling getWeather method
       if (Meteor.isServer){
         var output = HTTP.call("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + location );
