@@ -7,6 +7,7 @@ blaze-tools@1.0.2
 boilerplate-generator@1.0.2
 callback-hook@1.0.2
 check@1.0.4
+dburles:mongo-collection-instances@0.3.1
 ddp@1.0.14
 deps@1.0.6
 ejson@1.0.5
@@ -31,6 +32,8 @@ mobile-status-bar@1.0.2
 momentjs:moment@2.9.0
 mongo@1.0.11
 mrt:jquery-ui@1.9.2
+mrt:nprogress@0.1.0
+msavin:mongol@0.6.5
 observe-sequence@1.0.4
 ordered-dict@1.0.2
 pauloborges:mapbox@2.1.4_3
@@ -40,7 +43,9 @@ reactive-var@1.0.4
 reload@1.1.2
 retry@1.0.2
 routepolicy@1.0.4
+sacha:spin@2.0.4
 session@1.0.5
+settinghead:auto-nprogress@1.0.0
 spacebars@1.0.5
 spacebars-compiler@1.0.4
 templating@1.0.11

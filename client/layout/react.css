@@ -11,30 +11,33 @@ body {
   left: 0;
   right: 0;
 }
+
 .weatherbox{
   margin-top: 2em;
   color: darkgrey;
 }
 div#map{
   position: relative;
-  width: 40em;
+  width: 90%;
   height: 30em;
+  margin: 0 auto;
 }
 .shoutbox .title {
   text-align: center;
+  margin: 1em 0;
 }
 .shoutbox .content {
   list-style-type: none;
   overflow: scroll;
   overflow-x: hidden;
-  height: 30em;
+  height: 35em;
   border: solid;
   padding: 1em;
-  margin: 0.5em;
-  width: 25em;
+  margin: 0.5em auto;
+  width: 70%;
   float: center;
   clear: both;
-  }
+   }
 .submitted{
   text-align: right;
   font-size: 0.85em;
@@ -48,11 +51,25 @@ div#map{
 }
 .new-shout{
   padding: 1em;
-  margin-bottom: 2em;
+  margin: 0 auto;
+  width: 70%;
 }
-.shoutContent{
-  width: 25em;
-}
+
 .LocationInput{
   margin: 2em;
+}
+.modal-content{
+  list-style-type: none;
+  padding:0 2em 2em 2em;
+  line-height: 2em;
+}
+.modal-header{
+}
+.getForecast{
+  font-size: 0.7em;
+  color: black;
+  padding: 0.1em;
+}
+.button_text{
+  margin: 0.3em;
 }
