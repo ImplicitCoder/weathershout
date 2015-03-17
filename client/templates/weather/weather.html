@@ -1,0 +1,38 @@
+<template name="weather">
+  <h1 class="title">Where on Earth is the Weather?</h1>
+      <form class="LocationInput">
+        <input type = "text" name="location" placeholder="City, Country">
+        <input type = "submit" name="get_weather" value = "Get Weather">
+                 </form>
+ <div class="weatherbox">
+
+<h3>
+  <p>
+  {{#if locatie}}
+    The weather in {{locatie}} is: 
+  {{/if}}
+  {{forecast}}
+
+  {{#if locatie}}
+    <button name="get_forecast" class="getForecast"
+            data-toggle="modal" data-target="#weatherModal" value="3-day forecast">
+    <div class="button_text">Get forecast</div></button>
+  {{/if}}
+  </p>
+</h3>
+  <div class="modal fade" id="weatherModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h2>Forecast for {{locatie}}</h2>
+        </div>
+          {{>detailedForecastModal}}
+      </div>
+    </div>
+  </div>
+
+</div>
+</template>
