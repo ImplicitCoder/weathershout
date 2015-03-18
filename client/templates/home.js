@@ -1,5 +1,3 @@
-Meteor.subscribe("shouts");
-
 Session.set("WeatherSituation", "Please provide a location");
 Session.set("locatie", false);
 
@@ -19,6 +17,3 @@ Tracker.autorun(function(){
             marker.addTo(map);
   }
 });
-
-
-
