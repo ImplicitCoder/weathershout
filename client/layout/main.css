@@ -43,6 +43,39 @@ div#map{
   font-size: 0.85em;
   color: darkgray;
 }
+#name-field{
+  width: 8em;
+}
+#text-field{
+  width:60%;
+}
+
+#text-field.red:-moz-placeholder{ 
+  color:red;
+}
+#name-field.red:-moz-placeholder{
+  color:red;
+}
+#text-field.red::-moz-placeholder{
+  color:red;
+}
+#name-field.red::-moz-placeholder{
+  color:red;
+}
+#text-field.red::-webkit-input-placeholder{
+  color:red;
+}
+#name-field.red::-webkit-input-placeholder{
+  color:red;
+}
+#text-field.red::-ms-input-placeholder{
+  color:red;
+}
+#name-field.red::-ms-input-placeholder{
+  color:red;
+}
+
+
 .name{
   color: #66FF33;
 }

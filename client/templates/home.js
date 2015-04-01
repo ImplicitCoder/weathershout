@@ -5,7 +5,7 @@ Meteor.startup(function(){
     Mapbox.load();
 });
 
-Tracker.autorun(function(){
+Template.plan.rendered = function(){
   if(Mapbox.loaded()){
             L.mapbox.accessToken = "pk.eyJ1IjoiZGViYXplIiwiYSI6IldZTkJKRm8ifQ.yIrb5BtdpEKHBbhRz9sbPg";
             map = L.mapbox.map('map', "debaze.lb0ec7ma", {zoomControl: false}).setView([0.0, 20], 1);
@@ -16,4 +16,5 @@ Tracker.autorun(function(){
             });
             marker.addTo(map);
   }
-});
+  
+};

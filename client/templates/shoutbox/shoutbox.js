@@ -32,3 +32,4 @@ Template.shoutbox.events({
       }
 
 });
+
