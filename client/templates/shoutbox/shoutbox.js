@@ -9,19 +9,21 @@ Template.shoutbox.helpers({
         _i++;
     });
     return shoutObj;
-    },
-
-    scrollDown: function(){     //Scrolldown to last shout
-    Meteor.defer(function (){   //Wait until DOM is populated
-      var content = document.getElementById('shoutContent');
-      content.scrollTop = content.scrollHeight;
-    });
- }
+    }
 });
 
-Template.shoutbox.events({
+Template.shoutbox.rendered = function(){
+  this.find('#shoutContent')._uihooks = {
+    insertElement: function (node, next){       //insert new shout and scroll down
+      $(node).insertBefore(next);
+      var content = document.getElementById('shoutContent');
+      content.scrollTop = content.scrollHeight;
+    }
+  }
+};
 
-'submit .new-shout' : function(event){
+Template.shoutbox.events({
+  'submit .new-shout' : function(event){
       var text = event.target.text.value;
       var name = event.target.name.value;
       Meteor.call("addShout", text, name);
@@ -29,7 +31,6 @@ Template.shoutbox.events({
       var content = document.getElementById('shoutContent');
       content.scrollTop = content.scrollHeight;
       return false;
-      }
-
+  }
 });
 
