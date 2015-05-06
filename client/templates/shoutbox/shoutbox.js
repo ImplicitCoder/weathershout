@@ -1,6 +1,6 @@
 var scrollDown = function(){
   var content = document.getElementById('shoutContent');
-  content.scrollTop = content.scrollHeight;
+  $(content).animate({scrollTop : content.scrollHeight}, 600);
 };
 
 Template.shoutbox.helpers({
@@ -21,8 +21,11 @@ Template.shoutbox.rendered = function(){
   scrollDown();                             //scroll down after shouts are rendered in DOM
   this.find('#shoutContent')._uihooks = {
     insertElement: function (node, next){   //insert new shout and scroll down
+    
       $(node).insertBefore(next);
+
       scrollDown();
+      $(node).addClass('animate');
     }
   }
 };
